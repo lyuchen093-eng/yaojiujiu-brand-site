@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>案例详情 - 幺玖玖品牌策划</title>
+  </head>
+  <body>
+    <main class="detail-shell">
+      <a class="text-link" href="./index.html#cases">返回案例</a>
+      <section class="case-hero" id="caseHero"></section>
+      <section class="case-detail-grid" id="caseDetails"></section>
+      <section class="case-gallery-section">
+        <div class="section-head section-head--row">
+          <div>
+            <span>案例作品图集</span>
+            <h2>完整展示这个项目的视觉过程与落地应用。</h2>
+          </div>
+          <label class="upload-box upload-box--inline">
+            上传补充图片
+            <input id="localUpload" type="file" accept="image/*" multiple />
+          </label>
+        </div>
+        <p class="gallery-note">当前为本地预览：选择图片后会立即追加到本页展示；正式上线后可接入后台上传，保存到案例库。</p>
+        <div class="gallery gallery--case" id="caseGallery"></div>
+      </section>
+      <section class="cta cta--compact" id="contact">
+        <h2>喜欢这个案例？可以联系我做同款方案。</h2>
+        <p>把你的行业、品牌阶段、现有素材和目标场景发来，我们先判断适合从定位、VI、包装、IP 还是内容切入。</p>
+        <div class="wechat-modal" style="margin: 0 auto;">
+          <img src="/brand/wechat-qr.png" alt="微信二维码" />
+          <h2>微信咨询</h2>
+          <p>Soen_Nov24</p>
+          <small>添加微信时可以备注品牌阶段、现有问题和目标场景。</small>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const cases = {
+        "baobaolu": ["抱抱鹿", "亲子消费", "品牌识别 / 视觉手册", "/cases/baobaolu.png", "以亲和、陪伴、轻松互动为核心，构建适合亲子消费场景的品牌识别与延展应用。", 16],
+        "buleide": ["布雷德 BLADE", "潮流消费", "品牌策略 / VI 全案", "/cases/buleide.png", "以锋利、速度、能量感为识别方向，建立更具年轻化与视觉冲击力的品牌系统。", 17],
+        "chaye": ["茶野", "茶饮", "品牌视觉 / 包装延展", "/cases/chaye.png", "围绕自然茶感和日常松弛感，打造茶饮品牌的视觉调性、包装语言与线下物料。", 18],
+        "duanweizhi-ip": ["段位制 IP 人物", "体育文化", "IP 形象 / 视觉识别", "/cases/duanweizhi-ip.png", "将段位体系转译为更易传播的角色形象，提升规则认知、活动传播和社群记忆点。", 17],
+        "jinzhong-youli": ["晋中有礼", "城市文创", "城市礼品 / VI 系统", "/cases/jinzhong-youli.png", "提取地域文化与礼赠场景，构建具有地方识别度的文旅礼品品牌视觉系统。", 16],
+        "luoman": ["洛缦 LOMAN", "美学生活", "品牌识别 / 视觉规范", "/cases/luoman.png", "以柔和、精致、秩序感为基调，为美学生活品牌建立完整 VI 与应用规范。", 16],
+        "shangshangce": ["上上策", "咨询服务", "品牌命名 / 视觉识别", "/cases/shangshangce.png", "强化策略感和可信度，用更清晰的视觉结构承接咨询服务的专业表达。", 18],
+        "xiangkou-mianpu": ["巷口面铺", "本地餐饮", "餐饮 VI / 门店物料", "/cases/xiangkou-mianpu.png", "以街巷烟火气和高频用餐场景为核心，建立面铺品牌的门店识别与物料系统。", 16],
+        "xiaochengxu": ["小程序界面系统", "线上工具", "界面视觉 / 产品体验", "/cases/xiaochengxu.png", "围绕用户路径、功能层级和品牌一致性，设计适合移动端转化的小程序界面系统。", 6],
+        "xiaoerliang": ["小二两", "餐饮酒食", "VI 手册 / 包装物料", "/cases/xiaoerliang.png", "从品牌识别、工服、包装到线下物料，建立小二两更有记忆点的餐饮视觉体系。", 11],
+        "xunge": ["讯格 XUNGRID", "科技服务", "科技 VI / 品牌规范", "/cases/xunge.png", "以网格、秩序、连接为视觉线索，为科技服务品牌建立理性且易延展的识别系统。", 16],
+        "yaojiujiu": ["幺玖玖品牌策划", "品牌策划", "自有品牌 / 视觉系统", "/cases/yaojiujiu.png", "围绕策略、增长、对话与上升感，建立幺玖玖品牌策划自身的视觉识别和应用系统。", 18],
+        "yunqi-zaowu": ["云栖造物", "东方生活", "Logo 设计 / 品牌视觉", "/cases/yunqi-zaowu.png", "把东方意境、手作温度与现代品牌识别结合，形成更具文化感的品牌视觉语言。", 11]
+      };
+
+      const id = new URLSearchParams(location.search).get("id") || "baobaolu";
+      const item = cases[id] || cases.baobaolu;
+      document.title = item[0] + " - 幺玖玖品牌策划";
+
+      document.getElementById("caseHero").innerHTML = `
+        <div>
+          <span>${item[1]} / ${item[2]}</span>
+          <h1>${item[0]}</h1>
+          <p>${item[4]}</p>
+        </div>
+        <img src="${item[3]}" alt="${item[0]}" />
+      `;
+
+      document.getElementById("caseDetails").innerHTML = `
+        <article class="detail-block"><h2>项目背景</h2><p>品牌需要从零散视觉或模糊表达中，提炼出更清晰的品牌认知、场景触点和可持续延展的设计语言。</p></article>
+        <article class="detail-block"><h2>策略判断</h2><p>先明确品牌要被用户记住的核心线索，再决定视觉风格、辅助图形、应用物料和内容表达如何协同。</p></article>
+        <article class="detail-block"><h2>解决方案</h2><p>以品牌策略为起点，展开 LOGO、色彩、版式、包装/物料/界面等应用系统，让每个触点服务同一个品牌印象。</p></article>
+        <article class="detail-block"><h2>项目成果</h2><ul><li>建立统一视觉识别</li><li>形成可落地应用规范</li><li>提升品牌展示与提案质感</li></ul></article>
+      `;
+
+      const extMap = {
+        baobaolu: "png", buleide: "png", chaye: "png", "duanweizhi-ip": "png",
+        "jinzhong-youli": "png", luoman: "png", shangshangce: "png", "xiangkou-mianpu": "png",
+        xiaochengxu: "png", xiaoerliang: "png", xunge: "png", yaojiujiu: "png", "yunqi-zaowu": "png"
+      };
+      const gallery = document.getElementById("caseGallery");
+      gallery.innerHTML = Array.from({ length: item[5] }, (_, index) => {
+        const number = String(index + 1).padStart(2, "0");
+        return `<figure><img src="/cases/gallery/${id}/${number}.${extMap[id] || "png"}" alt="${item[0]}案例图 ${index + 1}" /><figcaption>${item[0]} / ${number}</figcaption></figure>`;
+      }).join("");
+
+      document.getElementById("localUpload").addEventListener("change", (event) => {
+        [...event.target.files].forEach((file) => {
+          const url = URL.createObjectURL(file);
+          const figure = document.createElement("figure");
+          figure.innerHTML = `<img src="${url}" alt="本地上传预览" /><figcaption>本地上传预览</figcaption>`;
+          gallery.prepend(figure);
+        });
+      });
+    </script>
+  </body>
+</html>

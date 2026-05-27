@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" role="img" aria-labelledby="title desc">
+  <title id="title">品牌策略提案板</title>
+  <desc id="desc">一张克制的品牌策略提案板，包含视觉网格、色彩样本和案例缩略图。</desc>
+  <defs>
+    <linearGradient id="bg" x1="94" y1="644" x2="796" y2="74" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7D3CFF" stop-opacity="0.16"/>
+      <stop offset="0.55" stop-color="#1376FF" stop-opacity="0.11"/>
+      <stop offset="1" stop-color="#16D3FF" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="236" y1="520" x2="668" y2="198" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7D3CFF"/>
+      <stop offset="0.58" stop-color="#1376FF"/>
+      <stop offset="1" stop-color="#16D3FF"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="900" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#0A1D46" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <rect x="48" y="48" width="804" height="624" rx="46" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="132" y="108" width="636" height="504" rx="30" fill="#FFFFFF"/>
+  </g>
+
+  <rect x="176" y="156" width="248" height="24" rx="12" fill="#08122C"/>
+  <rect x="176" y="198" width="152" height="12" rx="6" fill="#D9E4F7"/>
+  <rect x="176" y="222" width="210" height="12" rx="6" fill="#D9E4F7"/>
+
+  <rect x="552" y="150" width="46" height="46" rx="12" fill="#08122C"/>
+  <rect x="610" y="150" width="46" height="46" rx="12" fill="#1376FF"/>
+  <rect x="668" y="150" width="46" height="46" rx="12" fill="#7D3CFF"/>
+
+  <g stroke="#E2EAF8" stroke-width="2">
+    <line x1="176" y1="274" x2="724" y2="274"/>
+    <line x1="176" y1="430" x2="724" y2="430"/>
+    <line x1="360" y1="274" x2="360" y2="564"/>
+    <line x1="542" y1="274" x2="542" y2="564"/>
+  </g>
+
+  <g>
+    <rect x="176" y="304" width="132" height="82" rx="16" fill="#F3F7FF"/>
+    <rect x="198" y="326" width="46" height="10" rx="5" fill="url(#accent)"/>
+    <rect x="198" y="350" width="82" height="10" rx="5" fill="#6B7894"/>
+
+    <rect x="388" y="304" width="132" height="82" rx="16" fill="#F3F7FF"/>
+    <rect x="410" y="326" width="62" height="10" rx="5" fill="url(#accent)"/>
+    <rect x="410" y="350" width="78" height="10" rx="5" fill="#6B7894"/>
+
+    <rect x="600" y="304" width="124" height="82" rx="16" fill="#F3F7FF"/>
+    <rect x="622" y="326" width="42" height="10" rx="5" fill="url(#accent)"/>
+    <rect x="622" y="350" width="72" height="10" rx="5" fill="#6B7894"/>
+  </g>
+
+  <g>
+    <rect x="176" y="464" width="132" height="82" rx="16" fill="#08122C"/>
+    <rect x="198" y="486" width="72" height="10" rx="5" fill="#16D3FF"/>
+    <rect x="198" y="510" width="82" height="10" rx="5" fill="#FFFFFF" opacity="0.72"/>
+
+    <rect x="388" y="464" width="132" height="82" rx="16" fill="#F3F7FF"/>
+    <rect x="410" y="486" width="52" height="10" rx="5" fill="#1376FF"/>
+    <rect x="410" y="510" width="76" height="10" rx="5" fill="#6B7894"/>
+
+    <rect x="600" y="464" width="124" height="82" rx="16" fill="#F3F7FF"/>
+    <path d="M626 514C652 482 676 480 704 500" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="176" y="604" fill="#617091" font-size="18" font-weight="700">Strategy / Identity / System / Growth</text>
+  </g>
+</svg>
